@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand-mapped shadcn/ui semantic tokens (HSL) */
+    --background: 36 50% 92%; /* cream #F5EDE1 */
+    --foreground: 223 50% 22%; /* navy #1C2C54 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 223 50% 22%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 223 50% 22%;
+
+    --primary: 335 65% 54%; /* pink #D63B7C */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 35 46% 87%; /* cream-deep #EDE0CE */
+    --secondary-foreground: 223 50% 22%;
+
+    --muted: 35 46% 87%;
+    --muted-foreground: 223 43% 32%; /* navy-soft #2E4374 */
+
+    --accent: 178 54% 45%; /* teal #35B0AB */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 33 35% 82%;
+    --input: 33 35% 82%;
+    --ring: 335 65% 54%;
+
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* offset for fixed navbar when jumping to anchors */
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading text-navy;
+    text-wrap: balance;
+  }
+
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Consistent section padding */
+  .section-y {
+    @apply py-20 md:py-28;
+  }
+
+  /* Visible, accessible focus ring on interactive elements */
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+}
