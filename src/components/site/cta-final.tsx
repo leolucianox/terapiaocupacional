@@ -1,9 +1,9 @@
-import { Clock, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 import { Reveal } from "./reveal";
 import { Button } from "@/components/ui/button";
 import { WhatsappIcon } from "./whatsapp-icon";
-import { site, whatsappUrl } from "@/lib/site";
+import { site, whatsappUrl, emailUrl } from "@/lib/site";
 
 export function CtaFinal() {
   return (
@@ -36,15 +36,22 @@ export function CtaFinal() {
               </Button>
 
               <div className="mt-4 flex flex-col items-center gap-3 text-cream/90 sm:flex-row sm:gap-8">
-                <span className="flex items-center gap-2 text-sm">
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm transition-colors hover:text-white focus-ring rounded"
+                >
                   <Phone className="size-4 text-teal" aria-hidden="true" />
                   {site.phoneDisplay}
-                </span>
-                <span className="flex items-center gap-2 text-sm">
-                  <Clock className="size-4 text-teal" aria-hidden="true" />
-                  {/* [HORÁRIOS] */}
-                  Atendimento: [HORÁRIOS]
-                </span>
+                </a>
+                <a
+                  href={emailUrl}
+                  className="flex items-center gap-2 text-sm transition-colors hover:text-white focus-ring rounded"
+                >
+                  <Mail className="size-4 text-teal" aria-hidden="true" />
+                  {site.email}
+                </a>
               </div>
             </div>
           </div>

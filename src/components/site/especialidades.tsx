@@ -1,33 +1,48 @@
-import { Baby, Brain, Accessibility, Hand } from "lucide-react";
+import { Baby, Brain, Hand, Home } from "lucide-react";
 
 import { Reveal } from "./reveal";
 import { Pill } from "./pill";
 
-/**
- * [DEFINIR FOCO COM A PROFISSIONAL]
- * Placeholders com candidatos comuns em Terapia Ocupacional.
- * Substituir títulos, descrições e ícones pelos focos reais de atuação.
- */
+/** Áreas de atuação (conforme material da profissional). */
 const especialidades = [
   {
-    icon: Baby,
-    title: "Infantil / Desenvolvimento",
-    text: "Apoio ao desenvolvimento infantil, TEA, atrasos no desenvolvimento e integração sensorial.",
-  },
-  {
     icon: Brain,
-    title: "Reabilitação neurológica",
-    text: "Acompanhamento de adultos em processos de reabilitação após condições neurológicas.",
+    title: "Neurologia adulta",
+    items: [
+      "AVC, Parkinson e TCE",
+      "Lesões neurológicas diversas",
+      "Demências e perda funcional",
+      "Cuidados paliativos",
+      "Prevenção de quedas e envelhecimento saudável",
+    ],
   },
   {
-    icon: Accessibility,
-    title: "Geriatria / Terceira idade",
-    text: "Promoção de autonomia, prevenção de quedas e qualidade de vida na terceira idade.",
+    icon: Baby,
+    title: "Reabilitação infantil",
+    items: [
+      "Atraso do desenvolvimento",
+      "Dificuldades motoras",
+      "Treino de independência nas atividades diárias",
+      "Adaptações para o brincar",
+    ],
   },
   {
     icon: Hand,
-    title: "Atividades de vida diária",
-    text: "Reabilitação funcional para retomar tarefas do dia a dia com mais independência.",
+    title: "Tecnologia assistiva e órteses",
+    items: [
+      "Adaptações para autonomia e segurança",
+      "Confecção de órteses para o membro superior",
+      "Atendimento adulto e infantil",
+    ],
+  },
+  {
+    icon: Home,
+    title: "Atendimento domiciliar",
+    items: [
+      "Pacientes com mobilidade reduzida",
+      "Reabilitação pós-alta hospitalar",
+      "Treino funcional no ambiente real de vida",
+    ],
   },
 ];
 
@@ -43,7 +58,7 @@ export function Especialidades() {
             </h2>
             <p className="text-lg text-navy-soft">
               A terapia ocupacional acompanha pessoas em diferentes fases da
-              vida. Veja alguns dos focos do atendimento.
+              vida. Veja os principais focos do atendimento.
             </p>
           </div>
         </Reveal>
@@ -58,9 +73,17 @@ export function Especialidades() {
                 <h3 className="font-heading text-lg font-semibold text-navy">
                   {item.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-navy-soft">
-                  {item.text}
-                </p>
+                <ul className="flex flex-col gap-1.5 text-sm leading-relaxed text-navy-soft">
+                  {item.items.map((sub) => (
+                    <li key={sub} className="flex gap-2">
+                      <span
+                        aria-hidden="true"
+                        className="mt-2 size-1.5 shrink-0 rounded-full bg-pink/60"
+                      />
+                      {sub}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Reveal>
           ))}

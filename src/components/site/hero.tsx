@@ -72,7 +72,7 @@ export function Hero() {
             {/* Forma orgânica recortando a foto, ecoando o material da marca */}
             <div className="relative aspect-[4/5] overflow-hidden rounded-[42%_58%_58%_42%/45%_45%_55%_55%] bg-cream-deep shadow-soft-lg ring-8 ring-white/70">
               <Image
-                src="/images/franciele.jpg"
+                src="/images/foto5.jpeg"
                 alt={`${site.professional.name}, ${site.professional.role}`}
                 fill
                 priority

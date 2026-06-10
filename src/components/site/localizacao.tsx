@@ -1,15 +1,11 @@
-import { Building2, MapPinned, Clock } from "lucide-react";
+import { Building2, MapPinned, CalendarCheck } from "lucide-react";
 
 import { Reveal } from "./reveal";
 import { Pill } from "./pill";
 import { site } from "@/lib/site";
 
-/** [LISTAR REGIÕES/CIDADES] cobertas para atendimento domiciliar. */
-const regioesDomiciliar = [
-  "Região central [DEFINIR]",
-  "Bairros próximos [DEFINIR]",
-  "Cidades vizinhas [DEFINIR]",
-];
+/** Cidades cobertas para atendimento domiciliar (+ regiões sob consulta). */
+const regioesDomiciliar = [...site.homeCareCities, "Regiões próximas (sob consulta)"];
 
 export function Localizacao() {
   return (
@@ -22,8 +18,9 @@ export function Localizacao() {
               Atendimento e localização
             </h2>
             <p className="text-lg text-navy-soft">
-              Atendo na região de {site.city}. Consulte disponibilidade pelo
-              WhatsApp.
+              Atendimento em consultório em São José dos Campos e domiciliar em
+              Caçapava, São José dos Campos e Jacareí. Consulte disponibilidade
+              pelo WhatsApp.
             </p>
           </div>
         </Reveal>
@@ -38,19 +35,21 @@ export function Localizacao() {
                 </span>
                 <Pill variant="navy">Consultório</Pill>
               </div>
-              <p className="text-lg text-navy-soft">
-                {/* [ENDEREÇO/REGIÃO DO CONSULTÓRIO] */}
-                Endereço do consultório a confirmar — [ENDEREÇO/REGIÃO DO
-                CONSULTÓRIO].
+              <p className="text-lg leading-relaxed text-navy-soft">
+                {site.office.name}
+                <br />
+                {site.office.street} — {site.office.district}
+                <br />
+                {site.office.cityState}
               </p>
               <div className="mt-2 flex items-start gap-2.5 rounded-2xl bg-cream p-4 text-sm text-navy-soft">
-                <Clock
+                <CalendarCheck
                   className="mt-0.5 size-5 shrink-0 text-teal"
                   aria-hidden="true"
                 />
                 <span>
-                  {/* [HORÁRIOS] */}
-                  Horários de atendimento: [HORÁRIOS] — agende pelo WhatsApp.
+                  Atendimento mediante agendamento — fale comigo pelo WhatsApp
+                  para verificar a disponibilidade.
                 </span>
               </div>
             </div>

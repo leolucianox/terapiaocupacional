@@ -1,7 +1,7 @@
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Mail } from "lucide-react";
 
 import { WhatsappIcon } from "./whatsapp-icon";
-import { navLinks, site, whatsappUrl } from "@/lib/site";
+import { navLinks, site, whatsappUrl, emailUrl } from "@/lib/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -63,21 +63,24 @@ export function Footer() {
                 {site.phoneDisplay}
               </a>
             </li>
+            <li>
+              <a
+                href={emailUrl}
+                className="inline-flex items-center gap-2 transition-colors hover:text-pink focus-ring rounded"
+              >
+                <Mail className="size-4 text-teal" />
+                {site.email}
+              </a>
+            </li>
             <li className="flex items-center gap-3 pt-1">
-              {/* [LINKS DE REDES] */}
               <a
                 href={site.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="flex size-10 items-center justify-center rounded-full bg-white text-navy shadow-soft transition-colors hover:text-pink focus-ring"
               >
                 <Instagram className="size-5" />
-              </a>
-              <a
-                href={site.socials.facebook}
-                aria-label="Facebook"
-                className="flex size-10 items-center justify-center rounded-full bg-white text-navy shadow-soft transition-colors hover:text-pink focus-ring"
-              >
-                <Facebook className="size-5" />
               </a>
             </li>
           </ul>
