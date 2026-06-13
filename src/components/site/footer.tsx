@@ -94,11 +94,15 @@ export function Footer() {
             reservados.
           </p>
           <a
-            href="#"
-            className="transition-colors hover:text-pink focus-ring rounded"
+            href="https://leoluciano.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 transition-colors hover:text-pink focus-ring rounded"
           >
-            {/* Política de privacidade — conformidade com a LGPD */}
-            Política de Privacidade · LGPD
+            <span>Criado por</span>
+            <span className="flex size-7 items-center justify-center rounded-full bg-navy font-heading text-[0.7rem] font-bold tracking-tight text-cream shadow-soft transition-colors group-hover:bg-pink">
+              LL
+            </span>
           </a>
         </div>
       </div>

@@ -6,6 +6,8 @@
 export const site = {
   brand: "Adapte-se",
   tagline: "Terapia Ocupacional",
+  /** URL canônica de produção (sem barra final). */
+  url: "https://adapteseterapiaocupacional.com.br",
   professional: {
     name: "Dra. Franciele Maria de Lima Rios Almeida",
     role: "Terapeuta Ocupacional",

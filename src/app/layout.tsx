@@ -27,8 +27,16 @@ const caveat = Caveat({
 const description =
   "Terapia ocupacional com dedicação, cuidado e propósito. Atendimento em consultório e domiciliar com a Dra. Franciele Maria de Lima Rios Almeida (CREFITO-3).";
 
+/** Imagem de capa para compartilhamento (WhatsApp, redes sociais). */
+const ogImage = {
+  url: "/images/foto2.jpeg",
+  width: 1600,
+  height: 1066,
+  alt: `${site.professional.name} — ${site.brand} (${site.tagline})`,
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://adapte-se.example.com"),
+  metadataBase: new URL(site.url),
   title: {
     default: `${site.brand} — ${site.tagline} | ${site.city}`,
     template: `%s · ${site.brand}`,
@@ -43,17 +51,23 @@ export const metadata: Metadata = {
     site.city,
   ],
   authors: [{ name: site.professional.name }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
+    url: "/",
     title: `${site.brand} — ${site.tagline}`,
     description,
     siteName: site.brand,
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.brand} — ${site.tagline}`,
     description,
+    images: [ogImage],
   },
   robots: { index: true, follow: true },
 };
